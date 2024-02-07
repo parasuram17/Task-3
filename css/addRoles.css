@@ -18,6 +18,12 @@ form {
 }
 
 .description-input-box{
-    height:7rem;
+    height:1rem;
     width:22rem;
+    padding-bottom: 6rem;
+    margin-bottom:1rem; 
+}
+
+.label-input-assign-emp{
+    margin-top:1rem;
 }

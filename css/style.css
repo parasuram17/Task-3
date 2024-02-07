@@ -410,4 +410,31 @@ header {
     padding-right:0.25rem;
 }
 /* Common for page 2 and page 3 end*/
+.label-input label{
+    font-size:0.8rem;
+    color:#444A5A
+}.input-rows {
+    display: flex;
+    column-gap: 1rem;
+    margin-bottom: 1.3rem;
+}
+
+.label-input {
+    display: flex;
+    flex-direction: column;
+}
+.label-input label{
+    font-size:0.8rem;
+    color:#444A5A
+}
+.label-input input{
+    height: 1.5rem;
+    width:10rem;
+    border: 1px solid lightgrey;
+    outline:none;
+}
+
+.label-input input:focus{
+    border: 2px solid #358DFF;
+}
 
