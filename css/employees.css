@@ -1,0 +1,42 @@
+.roles-description{
+    margin-left:1rem;
+    font-size: 1rem;
+    color:black;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+.config-text{
+    margin-top: 0.8rem;
+    margin-left:1rem;
+    font-size: 0.8rem;
+    color:rgb(131,144,156);
+}
+.navigate{
+    color:grey;
+    margin:0 0.4rem;
+}
+.main-heading-employee-page{
+    display: flex;
+    align-items: center;
+}
+.main-title-employee-page{
+    margin-top: 0.8rem;
+}
+
+.c1,.c2,.c3,.c4,.c5,.c6{
+    padding: 0.4rem 1rem;
+}
+.profile-section-copy-employee-page{
+    margin: 1rem 0;
+}
+.card-person-name{
+    font-size: 0.77rem;
+
+}
+.card-person-role{
+    font-size: 0.65rem;
+}
+
+.card-sub-heading{
+    justify-content: start;
+}

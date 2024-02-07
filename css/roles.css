@@ -1,0 +1,53 @@
+.btn-add-role {
+    width: 8.5rem
+}
+.c1,.c2,.c3,.c4,.c5,.c6{
+    padding: 1rem;
+}
+.card-heading{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.card-heading-text{
+    font-size: 0.85rem;
+    font-weight: 900;
+}
+
+.edit-icon{
+    transform:scale(0.8)
+}
+
+.card-sub-heading{
+    justify-content: space-between;
+}
+
+.card-sub-heading-left{
+    display:flex;
+    justify-content: start;
+    align-items: center;
+
+}
+.card-sub-heading-right{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.imgs-top-5-emps{
+    border-radius: 50%;
+    border: 1px solid white;
+    height: auto;
+    width: 1rem;
+    margin: -0.2rem;
+
+}
+.plus-43{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin-left: -4px;
+    background-color: white;
+    font-size: 0.5rem;
+}

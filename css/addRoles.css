@@ -1,0 +1,23 @@
+form {
+    margin-left: 1.2rem;
+}
+
+.label-input select{
+    height:2rem;
+    width:16.6rem;
+    border-style:none;
+    background-color:rgb(243, 243, 243);
+}
+.label-input-description {
+    display: flex;
+    flex-direction: column;
+}
+.label-input-description label{
+    font-size:0.8rem;
+    color:#444A5A
+}
+
+.description-input-box{
+    height:7rem;
+    width:22rem;
+}
