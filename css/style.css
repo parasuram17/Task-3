@@ -10,11 +10,19 @@ body {
         "sidebar main";
     font-family: Lato;
 }
+
+body.active{
+    grid-template-columns: 0.3fr 7fr;
+
+}
 a:hover,
 button:hover,
 select:hover{
     cursor: pointer;
 
+}
+a{
+    text-decoration: none;
 }
 /* General Style end*/
 
@@ -99,11 +107,31 @@ header {
     background-color: white;
     grid-area: sidebar;
     position: relative;
-    /* height:40rem; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
+.sidebar.active{
+    .new-update{
+        display:none;
+    }
+    .collapse-button{
+        transform: rotate(180deg);
+    }
+    p,span,h6{
+        display:none;
+    }
+    .the-logo{
+        display:none;
+    }
+    .sidebar-sub-heading{
+        margin-top:1.5rem;
+        height:4rem;
+    }
+
+}
+
 
 .the-logo {
     width: 5rem;

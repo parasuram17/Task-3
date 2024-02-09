@@ -40,7 +40,7 @@
     <section class="sidebar">
         <div>
             <a title="logo"><img class="the-logo" src="images/TezoLogo.png" alt="Tezo Logo"></a>
-            <a title="collapse-arrow"><img class="collapse-button" src="images/handle.png" alt="collapse"></a>
+            <a id="collapsing-button" title="collapse-arrow"><img class="collapse-button" src="images/handle.png" alt="collapse"></a>
             <h6 class="sidebar-heading">ALL</h6>
             <a>
                 <div class="sidebar-sub-heading">
@@ -54,7 +54,7 @@
                 </div>
             </a>
 
-            <a>
+            <a href="index.html">
                 <div class="sidebar-sub-heading">
                     <div class="sidebar-icon-and-heading">
                         <div><img class="heading-icon" src="images/Horizontal nav/Employees.svg"></div>
@@ -66,7 +66,7 @@
                 </div>
             </a>
             <h6 class="sidebar-heading">ROLE/ USER MANAGEMENT</h6>
-            <a>
+            <a href="roles.html">
                 <div class="sidebar-sub-heading">
                     <div class="sidebar-icon-and-heading">
                         <div><img class="heading-icon" src="images/Horizontal nav/Roles.svg"></div>
@@ -103,12 +103,12 @@
         </div>
     </section>
     <section class="main">
-        <form>  
+        <form class ="form-employee">  
             <h1>Add Employee</h1>
             <div class="profile-picture-section">
-                <img class = "profile-pic" src="images/profilePicDefault.jpg" alt="default-profile-picture">
+                <img class = "profile-pic" src="images/profilePicDefault.jpg" alt="default-profile-picture" id="profile-picture">
                 <label for="input-file">Upload Profile Picture</label>
-                <input type="file" accept="image/jpeg , image/jpg, image/png" id="input-file" name="profile picture">
+                <input type="file" accept="image/jpeg , image/jpg, image/png" id="input-file" name="profile picture" required >
             </div>
             <h2>Personal Information</h2>
             <div class="input-rows">
@@ -198,5 +198,6 @@
             </div>
         </form>
     </section>
+    <script src="js/index.js"></script>
 </body>
 </html>
