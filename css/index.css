@@ -13,6 +13,7 @@
     margin-right: 0.4rem;
 }
 
+
 .alphabet {
     margin-top: 1.4rem;
     display: flex;
@@ -37,7 +38,16 @@
     color: rgb(152, 163, 177);
     background-color: rgb(234, 235, 238);
 }
-
+.icon-filter{
+    color:black;
+}
+.icon-filter.active{
+    color: #f44848;
+}
+.btn-alphabet.active{
+    color: white;
+    background-color: rgb(244, 72, 72);
+}
 .btn-alphabet:hover {
     color: white;
     background-color: rgb(244, 72, 72);
@@ -110,6 +120,12 @@ table {
     font-size: 1rem;
     padding-left: 10px;
 }
+.triple-dot.active{
+    cursor: pointer;
+    .tooltip{
+        display:block;
+    }
+}
 .tooltip{
     position :absolute;
     font-size:0.7rem;
@@ -128,11 +144,6 @@ table {
 .tooltip-text:hover{
     background-color: rgb(244, 72, 72);
     color:white;
-}
-.tripledot :hover{
-    .tooltip{
-        display:block;
-    }
 }
 
 .checkbox {

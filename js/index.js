@@ -1,105 +1,219 @@
 
-/*js for sidebar start*/
-
-/*js for sidebar end*/
-
-/* js for index page start*/
-
-{
-    function tableToCSV(table,file){
-        var data = [];
-        var rows = document.querySelectorAll('table tr');
-        for(var i = 0; i<rows.length; i++){
-            var row =[];
-            var cols = rows[i].querySelectorAll("td, th");
-            for(var j = 0; j<cols.length; j++){
-                row.push(cols[j].innerText);
-            }
+function tableToCSV(table, file) {
+    var data = [];
+    var rows = document.querySelectorAll('table tr');
+    for (var i = 0; i < rows.length; i++) {
+        var row = [];
+        var cols = rows[i].querySelectorAll("td, th");
+        for (var j = 0; j < cols.length; j++) {
+            row.push(cols[j].innerText);
+        }
         data.push(row.join(","));
+    }
+
+    downloadCSV(data.join("\n"), file)
+}
+function downloadCSV(csv, file) {
+    var csv_file, download_link;
+    csv_file = new Blob([csv], { type: "text/csv" });
+    download_link = document.createElement('a');
+    download_link.download = file;
+    download_link.href = window.URL.createObjectURL(csv_file);
+    download_link.style.display = "none";
+    document.body.appendChild(download_link);
+    download_link.click();
+}
+
+document.getElementById("export-button").addEventListener('click', function () {
+    var table = document.querySelector("table").outerHTML;
+    tableToCSV(table, "Employees.csv")
+});
+
+
+
+function addEmployeeRedirect() {
+    location.href = "addEmployees.html";
+}
+
+function alphabetFilter(rowDataObj, filterLetter){
+    if (rowDataObj['name'][0] == filterLetter){
+        return rowDataObj
+    }
+    else{
+        return null
+    }
+
+}
+function clearTable(){
+    let allRows = document.querySelectorAll(".table-rows")
+    for (let i of allRows){
+        i.remove();
+    }
+}
+
+function highlightAlphabet(alphabetButton) {
+    let letter =  alphabetButton.innerHTML;
+    let filterIcon = document.querySelector(".icon-filter");
+    alphabetButton.classList.toggle('active');
+    filterIcon.classList.add('active');
+    clearTable();
+    let allTheDataArray = getLocalStorageArray();
+    for(let it = 0; it<allTheDataArray.length; it++){
+        let allData = fetchData(allTheDataArray, it);
+        let customData = alphabetFilter(allData,letter);
+        //delete pre-existing markup
+        if (customData != null){
+            insertData(customData);
+        }
+    }
+
+}
+
+function resetTable(){
+    clearTable()
+    let fullTable = getLocalStorageArray()
+    for(let iter = 0; iter<fullTable.length; iter++){
+        let theData = fetchData(fullTable, iter);
+        insertData(theData);
+}
+}
+
+function filteringData(totData,filterObjPara){
+    const filterObj = structuredClone(filterObjPara)
+    if (filterObj['stat'] == 'Status' ){
+        filterObj['stat'] = totData['onlineStatus'];
+    }
+    if (filterObj['locat'] == 'Location' ){
+        filterObj['locat'] = totData['loc'];
+    } 
+    if (filterObj['depart'] == 'Department' ){
+        filterObj['depart'] = totData['dept'];
+    }
+
+    if (filterObj['stat'] == totData['onlineStatus'] && filterObj['locat'] == totData['loc'] && filterObj['depart'] == totData['dept']){
+        return totData;
+    }
+    else{
+        return null;
+    }
+}
+
+function applyFilters(filters){
+    clearTable()
+    let filtersArray = getLocalStorageArray();
+    // console.log(filtersArray);
+    for(let ite = 0; ite<filtersArray.length; ite++){
+        let totalData = fetchData(filtersArray,ite);
+        let filteredData = filteringData(totalData,filters);
+        if (filteredData !=null){
+            insertData(filteredData);
         }
 
-        downloadCSV(data.join("\n"),file)
-    }
-    function downloadCSV(csv, file){
-        var csv_file, download_link;
-        csv_file = new Blob([csv], {type:"text/csv"});
-        download_link = document.createElement('a');
-        download_link.download = file;
-        download_link.href = window.URL.createObjectURL(csv_file);
-        download_link.style.display = "none";
-        document.body.appendChild(download_link);
-        download_link.click();  
     }
 
-    document.getElementById("export-button").addEventListener('click', function(){
-        var table = document.querySelector("table").outerHTML;
-        tableToCSV(table,"Employees.csv")
-    });
 }
 
-{
-    function addEmployeeRedirect() {
-        location.href = "addEmployees.html";
+function fetchFilters(){
+    let statusFilter = document.getElementById('status');
+    let statusText = statusFilter.options[statusFilter.selectedIndex].text;
+    let locationFilter = document.getElementById('location');
+    let locationText = locationFilter.options[locationFilter.selectedIndex].text;
+    let departmentFilter = document.getElementById('department');
+    let departmentText = departmentFilter.options[departmentFilter.selectedIndex].text;
+    let filtersObj = {
+        stat:  statusText,
+        locat: locationText,
+        depart: departmentText,
     }
+    return applyFilters(filtersObj);
+    
 }
-{
-    document.addEventListener('DOMContentLoaded', () => {
-        tbody=document.querySelector('tbody');
-        const loadData = localStorage.getItem("employeeData");
-        const loadDataArray = JSON.parse(loadData);
-        for (item of loadDataArray) {
-            var profile_Pic = item['profile picture'];
-            var firstName = item['First Name'];
-            var lastName = item['Last Name'];
-            var emailID = item['Email ID'];
-            var location = item['Location'];
-            var department = item['Department'];
-            var role = item['Job Title'];
-            var empno = item['Emp no'];
-            var status = 'Active'
-            var joinDate = item['Join Date'];
-            var ellipsis = '...';
 
-            let tableRowTemplate =
+
+function fetchData(loadDataArray, item){
+        let profile_Pic = loadDataArray[item]['profile picture'];
+        let firstName = loadDataArray[item]['First Name'];
+        let lastName = loadDataArray[item]['Last Name'];
+        let emailID = loadDataArray[item]['Email ID'];
+        let location = loadDataArray[item]['Location'];
+        let department = loadDataArray[item]['Department'];
+        let role = loadDataArray[item]['Job Title'];
+        let empno = loadDataArray[item]['Emp no'];
+        let status = 'Active'
+        let joinDate = loadDataArray[item]['Join Date'];
+
+        let dataObj = {
+            picture: profile_Pic,
+            name: firstName+" "+lastName,
+            email:emailID,
+            loc:location,
+            dept:department,
+            job_title:role,
+            idNo:empno,
+            onlineStatus:status,
+            joinDt:joinDate,
+        }
+        return dataObj
+        
+    }
+
+    function insertData(dataObject){
+        let tbody = document.querySelector('tbody');
+        let tableRowTemplate =
             `
             <tr class="table-rows">
                             <td><input type="checkbox" class="check-box"/></td>
                             <td class="th-user">
                                 <div class="profile-section-copy">
                                     <div>
-                                        <img class="img-avatar" src="${profile_Pic}"/>
+                                        <img class="img-avatar" src="${dataObject['picture']}"/>
                                     </div>
                                     <div>
-                                        <p class="table-person-name">${firstName+" " } ${lastName}</p>
-                                        <p class="table-person-email">${emailID}</p>
+                                        <p class="table-person-name">${dataObject['name']}</p>
+                                        <p class="table-person-email">${dataObject['email']}</p>
                                     </div>
                                 </div>
                             </td>
-                            <td class="row-content th-location">${location}</td>
-                            <td class="row-content th-department">${department}</td>
-                            <td class="row-content th-role">${role}</td>
-                            <td class="row-content th-empno">${empno}</td>
+                            <td class="row-content th-location">${dataObject['loc']}</td>
+                            <td class="row-content th-department">${dataObject['dept']}</td>
+                            <td class="row-content th-role">${dataObject['job_title']}</td>
+                            <td class="row-content th-empno">${dataObject['idNo']}</td>
                             <td class="th-status">
-                                <button class="btn-active">${status}</button>
+                                <button class="btn-active">${dataObject['onlineStatus']}</button>
                             </td>
-                            <td class="row-content th-joindt">${joinDate}</td>
-                            <td class="triple-dot">${ellipsis}</td>
+                            <td class="row-content th-joindt">${dataObject['joinDt']}</td>
+                            <td class="triple-dot" onclick="toolTipVisible(this)">
+                            <a>
+                                ...
+                                <div class="tooltip" >
+                                    <p class="tooltip-text">View Details</p>
+                                    <p class="tooltip-text">Edit</p>
+                                    <p class="tooltip-text">Delete</p>
+                                </div>
+                            </a>
+                        </td>
                         </tr>`;
-                tbody.innerHTML += tableRowTemplate;
-        
-        }
-
-
-
-    });
-
-
+        tbody.innerHTML += tableRowTemplate;
+    }
+function toolTipVisible(toolTip){
+    toolTip.classList.toggle('active');
+    
 }
 
-/* js for index page end*/
+function getLocalStorageArray(){
+    const loadData = localStorage.getItem("employeeData");
+    if (loadData != null){
+        const loadDataArray = JSON.parse(loadData);
+        return loadDataArray
+    }
+}
 
-/* js for addEmployees page start*/
-
-/* js for addEmployees page end*/
-
+document.addEventListener('DOMContentLoaded', () => {
+            let loadDataArr = getLocalStorageArray();
+            for(let it = 0; it<loadDataArr.length; it++){
+            let loadedData = fetchData(loadDataArr, it);
+            insertData(loadedData);
+        }
+    }
+);
 

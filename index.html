@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="fonts/icon.css">
+
 </head>
 
 <body>
@@ -40,7 +42,8 @@
     <section class="sidebar">
         <div>
             <a title="logo"><img class="the-logo" src="images/TezoLogo.png" alt="Tezo Logo"></a>
-            <a id="collapsing-button" title="collapse-arrow"><img class="collapse-button" src="images/handle.png" alt="collapse"></a>
+            <a id="collapsing-button" title="collapse-arrow"><img class="collapse-button" src="images/handle.png"
+                    alt="collapse"></a>
             <h6 class="sidebar-heading">ALL</h6>
             <a>
                 <div class="sidebar-sub-heading">
@@ -109,13 +112,13 @@
                 <p class="main-text">Find all of your company's employee accounts and their associated roles.</p>
             </div>
             <div class="employees-btns">
-                <button class="btn-export" id = export-button>
+                <button class="btn-export" id=export-button>
                     <div class="btn-flex">
                         <div><img class="img-export" src="images/Masked Icon.png" alt="export"></div>
                         <div>EXPORT</div>
                     </div>
                 </button>
-                <button class="btn-add-employee" id="button-add-employee" onclick= "addEmployeeRedirect()">
+                <button class="btn-add-employee" id="button-add-employee" onclick="addEmployeeRedirect()">
                     <div class="btn-flex">
                         <div><img class="img-plus" src="images/plus.png" alt="export"></div>
                         <div>ADD EMPLOYEE</div>
@@ -125,64 +128,62 @@
         </div>
         <div class="alphabet">
             <div>
-                <img class="img-funnel" src="images/Vector.png" alt="funnel icon">
+                <span class="icon-filter"></span>
             </div>
-            <button class="btn-alphabet">A</button>
-            <button class="btn-alphabet">B</button>
-            <button class="btn-alphabet">C</button>
-            <button class="btn-alphabet">D</button>
-            <button class="btn-alphabet">E</button>
-            <button class="btn-alphabet">F</button>
-            <button class="btn-alphabet">G</button>
-            <button class="btn-alphabet">H</button>
-            <button class="btn-alphabet">I</button>
-            <button class="btn-alphabet">J</button>
-            <button class="btn-alphabet">K</button>
-            <button class="btn-alphabet">L</button>
-            <button class="btn-alphabet">M</button>
-            <button class="btn-alphabet">N</button>
-            <button class="btn-alphabet">O</button>
-            <button class="btn-alphabet">P</button>
-            <button class="btn-alphabet">Q</button>
-            <button class="btn-alphabet">R</button>
-            <button class="btn-alphabet">S</button>
-            <button class="btn-alphabet">T</button>
-            <button class="btn-alphabet">U</button>
-            <button class="btn-alphabet">V</button>
-            <button class="btn-alphabet">W</button>
-            <button class="btn-alphabet">X</button>
-            <button class="btn-alphabet">Y</button>
-            <button class="btn-alphabet">Z</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">A</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">B</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">C</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">D</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">E</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">F</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">G</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">H</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">I</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">J</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">K</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">L</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">M</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">N</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">O</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">P</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">Q</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">R</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">S</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">T</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">U</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">V</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">W</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">X</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">Y</button>
+            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">Z</button>
         </div>
         <div class="filter-box">
             <div class="filter-box-select">
                 <div class="filter-text">
                     <span> Filter</span>
-                    <span class="material-symbols-outlined icon-filter-list">filter_list</span>
+                    <span class="material-symbols-outlined filtering-icon">filter_list</span>
                 </div>
-                <select class="filter-tags">
+                <select id = "status" class="filter-tags">
                     <option>Status</option>
-                    <option>opt 1</option>
-                    <option>opt 2</option>
-                    <option>opt 3</option>
+                    <option>Active</option>
+                    <option>Inactive</option>
                 </select>
-                <select class="filter-tags">
+                <select id="location" class="filter-tags">
                     <option>Location</option>
-                    <option>opt 1</option>
-                    <option>opt 2</option>
-                    <option>opt 3</option>
+                    <option>Hyderabad</option>
+                    <option>Banglore</option>
+                    <option>Delhi</option>
                 </select>
-                <select class="filter-tags department-filter">
+                <select id = "department" class="filter-tags department-filter">
                     <option>Department</option>
-                    <option>opt 1</option>
-                    <option>opt 2</option>
-                    <option>opt 3</option>
+                    <option>UX/UI</option>
+                    <option>Product Engg</option>
                 </select>
             </div>
 
             <div class="filter-box-apply">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-apply">Apply</button>
+                <button class="btn-reset" onclick="resetTable()">Reset</button>
+                <button class="btn-apply" onclick="fetchFilters()">Apply</button>
 
             </div>
         </div>
@@ -273,20 +274,10 @@
                             </div>
                         </th>
                         <th class="tripledot">
-                            <a>
-                                ...
-                                <div class="tooltip">
-                                    <p class="tooltip-text">Inactive</p>
-                                    <p class="tooltip-text">Assign Project</p>
-                                    <p class="tooltip-text">Move to PIP</p>
-                                    <p class="tooltip-text">View Profile Log</p>
-                                    <p class="tooltip-text">Delete</p>
-                                </div>
-                            </a>
+                            ...
                         </th>
                     </tr>
                 </thead>
-                
                 <tbody>
                     <!-- <tr class="table-rows">
                         <td><input type="checkbox" class="check-box"></td>
@@ -309,9 +300,19 @@
                             <button class="btn-active">Active</button>
                         </td>
                         <td class="row-content th-joindt">12/03/2023</td>
-                        <td class="triple-dot">...</td>
+                        <td class="triple-dot">
+                            <a>
+                                ...
+                                <div class="tooltip">
+                                    <p class="tooltip-text">Inactive</p>
+                                    <p class="tooltip-text">Assign Project</p>
+                                    <p class="tooltip-text">Move to PIP</p>
+                                    <p class="tooltip-text">View Profile Log</p>
+                                    <p class="tooltip-text">Delete</p>
+                                </div>
+                            </a>
+                        </td>
                     </tr> -->
-
                 </tbody>
             </table>
 
@@ -319,7 +320,7 @@
 
     </section>
     <script src="js/index.js"></script>
-    <script src="js/general.js"></script>
+    <script src="js/sidebar.js"></script>
 </body>
 
 </html>

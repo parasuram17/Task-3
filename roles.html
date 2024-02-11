@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/roles.css">
-    <link rel="stylesheet" href="css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/roles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
 </head>
+
 <body>
     <header>
         <div class="header-searchbox">
@@ -39,7 +41,8 @@
     <section class="sidebar">
         <div>
             <a title="logo"><img class="the-logo" src="images/TezoLogo.png" alt="Tezo Logo"></a>
-            <a id="collapsing-button" title="collapse-arrow"><img class="collapse-button" src="images/handle.png" alt="collapse"></a>
+            <a id="collapsing-button" title="collapse-arrow"><img class="collapse-button" src="images/handle.png"
+                    alt="collapse"></a>
             <h6 class="sidebar-heading">ALL</h6>
             <a>
                 <div class="sidebar-sub-heading">
@@ -100,7 +103,7 @@
             <button class="btn-dismiss">Dismiss</button>
             <button class="btn-accept">Accept</button>
         </div>
-    </section>    
+    </section>
     <section class="main">
         <div class="roles">
             <div>
@@ -108,7 +111,7 @@
                 <p class="main-text">All the roles are configured here</p>
             </div>
             <div>
-                <button class="btn-add-role">
+                <button class="btn-add-role" onclick="addRolesRedirect()">
                     <div class="btn-flex">
                         <div><img class="img-plus" src="images/plus.png" alt="export"></div>
                         <div>ADD ROLE</div>
@@ -120,8 +123,8 @@
             <div class="filter-box-select">
                 <div class="filter-text">
                     <span> Filter</span>
-                    <span class="material-symbols-outlined icon-filter-list">filter_list</span>
-                </div>     
+                    <span class="material-symbols-outlined filtering-icon">filter_list</span>
+                </div>
                 <select class="filter-tags">
                     <option>Location</option>
                     <option>opt 1</option>
@@ -135,7 +138,7 @@
                     <option>opt 3</option>
                 </select>
             </div>
-            
+
             <div class="filter-box-apply">
                 <button class="btn-reset">Reset</button>
                 <button class="btn-apply">Apply</button>
@@ -151,7 +154,7 @@
                 <div class="card-sub-heading">
                     <div class="card-sub-heading-left">
                         <div>
-                            <img  class="card-icons" src="images/team_svgrepo.com.svg">
+                            <img class="card-icons" src="images/team_svgrepo.com.svg">
                         </div>
                         <div>
                             Department
@@ -164,7 +167,7 @@
                 <div class="card-sub-heading">
                     <div class="card-sub-heading-left">
                         <div>
-                            <img class ="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
+                            <img class="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
                         </div>
                         <div>
                             Location
@@ -186,10 +189,12 @@
                         <div class="plus-43">+43</div>
                     </div>
                 </div>
+                <a href="employees.html">
                 <div class="view-arrow">
                         <p>View all Employees </p>
                         <img class="icon-arrow" src="images/Vector.svg">
                 </div>
+                </a>
             </div>
             <div class="c2">
                 <div class="card-heading">
@@ -199,7 +204,7 @@
                 <div class="card-sub-heading">
                     <div class="card-sub-heading-left">
                         <div>
-                            <img  class="card-icons" src="images/team_svgrepo.com.svg">
+                            <img class="card-icons" src="images/team_svgrepo.com.svg">
                         </div>
                         <div>
                             Department
@@ -212,7 +217,7 @@
                 <div class="card-sub-heading">
                     <div class="card-sub-heading-left">
                         <div>
-                            <img class ="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
+                            <img class="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
                         </div>
                         <div>
                             Location
@@ -234,10 +239,12 @@
                         <div class="plus-43">+43</div>
                     </div>
                 </div>
+                <a href="employees.html">
                 <div class="view-arrow">
                         <p>View all Employees </p>
                         <img class="icon-arrow" src="images/Vector.svg">
                 </div>
+                </a>
             </div>
             <div class="c3">
                 <div class="card-heading">
@@ -247,7 +254,7 @@
                 <div class="card-sub-heading">
                     <div class="card-sub-heading-left">
                         <div>
-                            <img  class="card-icons" src="images/team_svgrepo.com.svg">
+                            <img class="card-icons" src="images/team_svgrepo.com.svg">
                         </div>
                         <div>
                             Department
@@ -260,7 +267,7 @@
                 <div class="card-sub-heading">
                     <div class="card-sub-heading-left">
                         <div>
-                            <img class ="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
+                            <img class="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
                         </div>
                         <div>
                             Location
@@ -282,10 +289,12 @@
                         <div class="plus-43">+43</div>
                     </div>
                 </div>
+                <a href="employees.html">
                 <div class="view-arrow">
                         <p>View all Employees </p>
                         <img class="icon-arrow" src="images/Vector.svg">
                 </div>
+                </a>
             </div>
             <div class="c4">
                 <div class="card-heading">
@@ -295,7 +304,7 @@
                 <div class="card-sub-heading">
                     <div class="card-sub-heading-left">
                         <div>
-                            <img  class="card-icons" src="images/team_svgrepo.com.svg">
+                            <img class="card-icons" src="images/team_svgrepo.com.svg">
                         </div>
                         <div>
                             Department
@@ -308,7 +317,7 @@
                 <div class="card-sub-heading">
                     <div class="card-sub-heading-left">
                         <div>
-                            <img class ="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
+                            <img class="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
                         </div>
                         <div>
                             Location
@@ -330,10 +339,12 @@
                         <div class="plus-43">+43</div>
                     </div>
                 </div>
+                <a href="employees.html">
                 <div class="view-arrow">
                         <p>View all Employees </p>
                         <img class="icon-arrow" src="images/Vector.svg">
                 </div>
+                </a>
             </div>
             <div class="c5">
                 <div class="card-heading">
@@ -343,7 +354,7 @@
                 <div class="card-sub-heading">
                     <div class="card-sub-heading-left">
                         <div>
-                            <img  class="card-icons" src="images/team_svgrepo.com.svg">
+                            <img class="card-icons" src="images/team_svgrepo.com.svg">
                         </div>
                         <div>
                             Department
@@ -356,7 +367,7 @@
                 <div class="card-sub-heading">
                     <div class="card-sub-heading-left">
                         <div>
-                            <img class ="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
+                            <img class="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
                         </div>
                         <div>
                             Location
@@ -378,10 +389,12 @@
                         <div class="plus-43">+43</div>
                     </div>
                 </div>
+                <a href="employees.html">
                 <div class="view-arrow">
                         <p>View all Employees </p>
                         <img class="icon-arrow" src="images/Vector.svg">
                 </div>
+                </a>
             </div>
             <div class="c6">
                 <div class="card-heading">
@@ -391,7 +404,7 @@
                 <div class="card-sub-heading">
                     <div class="card-sub-heading-left">
                         <div>
-                            <img  class="card-icons" src="images/team_svgrepo.com.svg">
+                            <img class="card-icons" src="images/team_svgrepo.com.svg">
                         </div>
                         <div>
                             Department
@@ -404,7 +417,7 @@
                 <div class="card-sub-heading">
                     <div class="card-sub-heading-left">
                         <div>
-                            <img class ="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
+                            <img class="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
                         </div>
                         <div>
                             Location
@@ -426,12 +439,17 @@
                         <div class="plus-43">+43</div>
                     </div>
                 </div>
+                <a href="employees.html">
                 <div class="view-arrow">
                         <p>View all Employees </p>
                         <img class="icon-arrow" src="images/Vector.svg">
                 </div>
+                </a>
             </div>
         </div>
-    </section>  <script src="js/general.js"></script>
+    </section>
+    <script src="js/sidebar.js"></script>
+    <script src="js/roles.js"></script>
 </body>
+
 </html>
