@@ -5,7 +5,6 @@ inputPicture.onchange = () => {
     profilePicture.src = URL.createObjectURL(inputPicture.files[0]);
 }
 
-
 let globalurl;
 const profilePic = document.getElementById('input-file');
 profilePic.addEventListener('change', () => {
@@ -14,7 +13,7 @@ profilePic.addEventListener('change', () => {
     fr.addEventListener('load', () => {
         let url = fr.result;
         globalurl = url
-        // console.log(url);
+
     });
 })
 
@@ -24,7 +23,6 @@ empForm.addEventListener("submit", (e) => {
     const empFormData = new FormData(empForm);
     const empFormDataObject = Object.fromEntries(empFormData);
     empFormDataObject['profile picture'] = globalurl;
-    // console.log(empFormDataObject['profile picture'])
     const exists = localStorage.getItem("employeeData");
     if (exists == null) {
         const jsonString = JSON.stringify([empFormDataObject]);
@@ -34,6 +32,13 @@ empForm.addEventListener("submit", (e) => {
     else {
         const existingData = localStorage.getItem("employeeData");
         const existingDataArray = JSON.parse(existingData);
+        for (let i = 0; i < existingDataArray.length; i++) {
+            if (existingDataArray[i]['Emp no'] == empFormDataObject['Emp no'] ||
+                existingDataArray[i]['Email ID'] == empFormDataObject['Email ID']) {
+                alert("enter unique email or emp no");
+                return;
+            }
+        }
         existingDataArray.push(empFormDataObject);
         const jsonString = JSON.stringify(existingDataArray);
         localStorage.setItem("employeeData", jsonString);

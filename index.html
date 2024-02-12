@@ -130,32 +130,32 @@
             <div>
                 <span class="icon-filter"></span>
             </div>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">A</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">B</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">C</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">D</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">E</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">F</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">G</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">H</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">I</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">J</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">K</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">L</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">M</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">N</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">O</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">P</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">Q</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">R</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">S</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">T</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">U</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">V</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">W</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">X</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">Y</button>
-            <button class="btn-alphabet" onclick = "highlightAlphabet(this)">Z</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">A</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">B</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">C</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">D</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">E</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">F</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">G</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">H</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">I</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">J</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">K</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">L</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">M</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">N</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">O</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">P</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">Q</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">R</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">S</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">T</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">U</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">V</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">W</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">X</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">Y</button>
+            <button class="btn-alphabet" onclick="highlightAlphabet(this)">Z</button>
         </div>
         <div class="filter-box">
             <div class="filter-box-select">
@@ -163,7 +163,7 @@
                     <span> Filter</span>
                     <span class="material-symbols-outlined filtering-icon">filter_list</span>
                 </div>
-                <select id = "status" class="filter-tags">
+                <select id="status" class="filter-tags">
                     <option>Status</option>
                     <option>Active</option>
                     <option>Inactive</option>
@@ -171,10 +171,10 @@
                 <select id="location" class="filter-tags">
                     <option>Location</option>
                     <option>Hyderabad</option>
-                    <option>Banglore</option>
+                    <option>Bangalore</option>
                     <option>Delhi</option>
                 </select>
-                <select id = "department" class="filter-tags department-filter">
+                <select id="department" class="filter-tags department-filter">
                     <option>Department</option>
                     <option>UX/UI</option>
                     <option>Product Engg</option>
@@ -183,7 +183,7 @@
 
             <div class="filter-box-apply">
                 <button class="btn-reset" onclick="resetTable()">Reset</button>
-                <button class="btn-apply" onclick="fetchFilters()">Apply</button>
+                <button class="btn-apply" onclick="applyFilters()">Apply</button>
 
             </div>
         </div>
@@ -191,7 +191,7 @@
             <div class="delete-and-add-section">
                 <div class="delete-side-section">
                     <img class="left-down-arrow" src="images/arrow-turn left -down.png" alt="left down arrow">
-                    <button class="btn-delete">Delete</button>
+                    <button class="btn-delete" onclick="deleteRecords()">Delete</button>
                 </div>
                 <div class="add-side-section">
                     <img class="add-icon" src="images/table-add.png" alt="add icon">
@@ -201,7 +201,7 @@
                 <thead>
                     <tr class="table-headings">
                         <th>
-                            <input type="checkbox" class="checkbox">
+                            <input type="checkbox" class="checkbox" onclick="checkUncheckAll()">
                         </th>
                         <th class="th-user">
                             <div class="th-flex">

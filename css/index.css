@@ -1,5 +1,5 @@
-.btn-export{
-    color: rgb(140,154,168);
+.btn-export {
+    color: rgb(140, 154, 168);
     font-size: 0.7rem;
     padding: 0.3rem;
     background-color: white;
@@ -8,6 +8,7 @@
     width: 6rem;
     height: 2.1rem;
 }
+
 .img-export {
     width: 1rem;
     margin-right: 0.4rem;
@@ -38,16 +39,20 @@
     color: rgb(152, 163, 177);
     background-color: rgb(234, 235, 238);
 }
-.icon-filter{
-    color:black;
+
+.icon-filter {
+    color: black;
 }
-.icon-filter.active{
+
+.icon-filter.active {
     color: #f44848;
 }
-.btn-alphabet.active{
+
+.btn-alphabet.active {
     color: white;
     background-color: rgb(244, 72, 72);
 }
+
 .btn-alphabet:hover {
     color: white;
     background-color: rgb(244, 72, 72);
@@ -88,6 +93,10 @@
 
 }
 
+.btn-delete.active {
+    background-color: rgb(244, 72, 72);
+}
+
 .add-icon {
     height: 1.2rem;
 }
@@ -120,30 +129,35 @@ table {
     font-size: 1rem;
     padding-left: 10px;
 }
-.triple-dot.active{
+
+.triple-dot.active {
     cursor: pointer;
-    .tooltip{
-        display:block;
+
+    .tooltip {
+        display: block;
     }
 }
-.tooltip{
-    position :absolute;
-    font-size:0.7rem;
+
+.tooltip {
+    position: absolute;
+    font-size: 0.7rem;
     background-color: white;
-    display:none;
+    display: none;
     width: 7rem;
-    right:-1rem;
+    right: -1rem;
     text-align: start;
-    border: 1px solid black;  
+    border: 1px solid black;
 }
-.tooltip p{
-    margin:0;
-    height:2rem;
-    padding-left:0.4rem;
+
+.tooltip p {
+    margin: 0;
+    height: 2rem;
+    padding-left: 0.4rem;
 }
-.tooltip-text:hover{
+
+.tooltip-text:hover {
     background-color: rgb(244, 72, 72);
-    color:white;
+    color: white;
 }
 
 .checkbox {
