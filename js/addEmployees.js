@@ -1,3 +1,20 @@
+let emptyLabelInput = document.querySelectorAll(".label-input");
+for(let i = 0 ;i<emptyLabelInput.length;i++){
+    // console.log(emptyLabelInput[i])
+    let emptyInput = emptyLabelInput[i].querySelector("input");
+    if(emptyInput != null ){
+        // console.log(emptyInput)
+        emptyInput.addEventListener('blur', f =>{
+            let requiredPrompt = emptyLabelInput[i].querySelector('.visible-prompt');
+            if (emptyInput.value ==""){
+                requiredPrompt.classList.add('active');
+            }
+            else{
+                requiredPrompt.classList.remove('active');
+            }
+        })
+    }
+}
 
 let profilePicture = document.getElementById("profile-picture");
 let inputPicture = document.getElementById("input-file")

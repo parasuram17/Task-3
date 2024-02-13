@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -109,40 +110,59 @@
             <div class="profile-picture-section">
                 <img class="profile-pic" src="images/profilePicDefault.jpg" alt="default-profile-picture"
                     id="profile-picture">
-                <label for="input-file">Upload Profile Picture</label>
-                <input type="file" accept="image/jpeg , image/jpg, image/png" id="input-file" name="profile picture"
-                    required>
+                <div class="input-box">
+                    <label for="input-file">Upload Profile Picture</label>
+                    <input type="file" accept="image/jpeg , image/jpg, image/png" id="input-file" name="profile picture" required>
+                </div>
             </div>
             <h2>Personal Information</h2>
             <div class="input-rows">
-                <div class="label-input">
+                <div class="label-input" id="label-input-empno">
                     <label for="input-emp-no"> Emp no</label>
                     <input type="text" id="input-emp-no" placeholder="Text" name="Emp no" required>
+                    <div class="visible-prompt">
+                        <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
+                    </div>
                 </div>
             </div>
             <div class="input-rows">
                 <div class="label-input">
                     <label for="input-first-name"> First Name</label>
                     <input type="text" id="input-first-name" placeholder="Text" name="First Name" required>
+                    <div class="visible-prompt">
+                        <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
+                    </div>
                 </div>
                 <div class="label-input">
                     <label for="input-last-name"> Last Name</label>
                     <input type="text" id="input-last-name" placeholder="Text" name="Last Name" required>
+                    <div class="visible-prompt">
+                        <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
+                    </div>
                 </div>
                 <div class="label-input">
                     <label for="input-dob"> Date of Birth</label>
                     <input type="text" id="input-dob" placeholder="Select" onfocus="(this.type='date')" name="DOB"
                         required>
+                        <div class="visible-prompt">
+                        <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
+                    </div>
                 </div>
             </div>
             <div class="input-rows">
                 <div class="label-input">
                     <label for="input-email"> Email Id</label>
                     <input type="text" id="input-email" placeholder="Joe.j@technovert.com" name="Email ID" required>
+                    <div class="visible-prompt">
+                        <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
+                    </div>
                 </div>
                 <div class="label-input">
                     <label for="input-phno"> Mobile Number</label>
                     <input type="text" id="input-phno" placeholder="0000000000" name="Phone no" required>
+                    <div class="visible-prompt">
+                        <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
+                    </div>
                 </div>
             </div>
             <h2>Employement Information</h2>
@@ -151,6 +171,9 @@
                     <label for="input-join-date"> Joining Date</label>
                     <input type="text" id="input-join-date" placeholder="12/08/2023" onfocus="(this.type='date')"
                         name="Join Date" required>
+                        <div class="visible-prompt">
+                            <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
+                        </div>
                 </div>
                 <div class="label-input">
                     <label for="input-location"> Location</label>
