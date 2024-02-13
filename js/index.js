@@ -42,6 +42,17 @@ function resetTable() {
         let theData = fetchData(fullTable, iter);
         insertData(theData);
     }
+    filteredCharacters = []
+    highlightFilterIcon()
+    let alphabetButtons = document.querySelectorAll(".btn-alphabet");
+    for(let i = 0;i<alphabetButtons.length;i++){
+        alphabetButtons[i].classList.remove('active');
+    }
+    let filterTags = document.querySelectorAll('.filter-tags')
+    for(let i = 0;i<filterTags.length;i++){
+        filterTags[i].selectedIndex = 0;
+    }
+    
 }
 function addEmployeeRedirect() {
     location.href = "addEmployees.html";
@@ -184,6 +195,72 @@ function deleteRecords() {
 
 }
 
+let glbSortCount = 0
+function sortingTable(sortParam){
+    let sortingStorage = getLocalStorageArray();
+    let allTableRows = document.querySelectorAll(' .'+sortParam);
+    let valuesArray = [];
+    clearTable();
+    for(let i = 0;i<allTableRows.length;i++){
+        valuesArray.push(allTableRows[i].innerHTML);
+    }
+    if (glbSortCount%2 == 0){
+        valuesArray.sort();
+    }
+    else{
+        valuesArray.sort();
+        valuesArray.reverse();
+    }
+    for(let i = 0;i<valuesArray.length;i++){
+        for(let j = 0;j<sortingStorage.length;j++){
+            let data = fetchData(sortingStorage,j);
+            if(sortParam == "table-person-name"){
+                if(data['name'] == valuesArray[i]){
+                    insertData(data);
+                    sortingStorage.splice(sortingStorage.indexOf(sortingStorage[j]),1);
+                }
+            }
+            else if(sortParam == "th-location"){
+                if(data['loc'] == valuesArray[i]){
+                    insertData(data);
+                    sortingStorage.splice(sortingStorage.indexOf(sortingStorage[j]),1);
+                }
+            }
+            else if(sortParam == "th-department"){
+                if(data['dept'] == valuesArray[i]){
+                    insertData(data);
+                    sortingStorage.splice(sortingStorage.indexOf(sortingStorage[j]),1);
+                }
+            }
+            else if(sortParam == "th-role"){
+                if(data['job_title'] == valuesArray[i]){
+                    insertData(data);
+                    sortingStorage.splice(sortingStorage.indexOf(sortingStorage[j]),1);
+                }
+            }
+            else if(sortParam == "th-empno"){
+                if(data['idNo'] == valuesArray[i]){
+                    insertData(data);
+                    sortingStorage.splice(sortingStorage.indexOf(sortingStorage[j]),1);  
+                }
+            }
+            else if(sortParam == "btn-active"){
+                if(data['onlineStatus'] == valuesArray[i]){
+                    insertData(data);
+                    sortingStorage.splice(sortingStorage.indexOf(sortingStorage[j]),1);
+                }
+            }
+            else if(sortParam == "th-joindt"){
+                if(data['joinDt'] == valuesArray[i]){
+                    insertData(data);
+                    sortingStorage.splice(sortingStorage.indexOf(sortingStorage[j]),1);
+                }
+            }
+        }
+    }
+    glbSortCount+=1
+}
+
 function fetchData(loadDataArray, item) {
     let profile_Pic = loadDataArray[item]['profile picture'];
     let firstName = loadDataArray[item]['First Name'];
@@ -270,4 +347,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 }
 );
-

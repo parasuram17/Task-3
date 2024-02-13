@@ -194,7 +194,9 @@ table {
     background-color: rgb(255, 244, 244);
 }
 
-
+.sortButton:hover{
+    cursor:pointer;
+}
 
 .table-person-name {
     font-size: 0.7rem;
