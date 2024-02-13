@@ -1,33 +1,32 @@
-// function tableToCSV(table, file) {
-//     var data = [];
-//     var rows = document.querySelectorAll('table tr');
-//     for (var i = 0; i < rows.length; i++) {
-//         var row = [];
-//         var cols = rows[i].querySelectorAll("td, th");
-//         for (var j = 0; j < cols.length; j++) {
-//             row.push(cols[j].innerText);
-//         }
-//         data.push(row.join(","));
-//     }
-
-//     downloadCSV(data.join("\n"), file)
-// }
-// function downloadCSV(csv, file) {
-//     var csv_file, download_link;
-//     csv_file = new Blob([csv], { type: "text/csv" });
-//     download_link = document.createElement('a');
-//     download_link.download = file;
-//     download_link.href = window.URL.createObjectURL(csv_file);
-//     download_link.style.display = "none";
-//     document.body.appendChild(download_link);
-//     download_link.click();
-// }
-
-// document.getElementById("export-button").addEventListener('click', function () {
-//     var table = document.querySelector("table").outerHTML;
-//     tableToCSV(table, "Employees.csv")
-// });
-
+function tableToCSV() {
+    let data = [];
+    let headers = ['Name','Email', 'Location','Department', 'Role', 'Emp No', 'Join Date'];
+    data.push(headers.join(","));
+    // console.log(data)
+    let rows = document.querySelectorAll('tbody tr');
+    for (let i = 0; i < rows.length; i++) {
+        let row = [];
+        row.push(rows[i].querySelector(".table-person-name").innerText);
+        row.push(rows[i].querySelector(".table-person-email").innerText);
+        row.push(rows[i].querySelector(".th-location").innerText);
+        row.push(rows[i].querySelector(".th-department").innerText);
+        row.push(rows[i].querySelector(".th-role").innerText);
+        row.push(rows[i].querySelector(".th-empno").innerText);
+        row.push(String(rows[i].querySelector(".th-joindt").innerText));
+        data.push(row.join(","));
+    }
+    downloadCSV(data.join("\n"))
+}
+function downloadCSV(csv, file="Employees.csv") {
+    let csv_file, download_link;
+    csv_file = new Blob([csv], { type: "text/csv" });
+    download_link = document.createElement('a');
+    download_link.download = file;
+    download_link.href = window.URL.createObjectURL(csv_file);
+    download_link.style.display = "none";
+    document.body.appendChild(download_link);
+    download_link.click();
+}
 
 function clearTable() {
     let allRows = document.querySelectorAll(".table-rows")
