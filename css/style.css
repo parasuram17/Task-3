@@ -470,6 +470,9 @@ header {
 .label-input input:focus{
     border: 2px solid #358DFF;
 }
+.inpt-box.active{
+    border: 2px solid red;
+}
 
 
 

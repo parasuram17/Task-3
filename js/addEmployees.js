@@ -4,11 +4,15 @@ for(let i = 0 ;i<emptyLabelInput.length;i++){
     if(emptyInput != null ){
         emptyInput.addEventListener('blur', f =>{
             let requiredPrompt = emptyLabelInput[i].querySelector('.visible-prompt');
+            let box = emptyLabelInput[i].querySelector(".inpt-box")
+            // let box = emptyLabelInput[i]
             if (emptyInput.value ==""){
                 requiredPrompt.classList.add('active');
+                box.classList.add('active');
             }
             else{
                 requiredPrompt.classList.remove('active');
+                box.classList.remove('active');
             }
         })
     }
