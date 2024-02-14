@@ -2,17 +2,16 @@ function tableToCSV() {
     let data = [];
     let headers = ['Name','Email', 'Location','Department', 'Role', 'Emp No', 'Join Date'];
     data.push(headers.join(","));
-    // console.log(data)
-    let rows = document.querySelectorAll('tbody tr');
+    let rows = postFilterStorage
     for (let i = 0; i < rows.length; i++) {
         let row = [];
-        row.push(rows[i].querySelector(".table-person-name").innerText);
-        row.push(rows[i].querySelector(".table-person-email").innerText);
-        row.push(rows[i].querySelector(".th-location").innerText);
-        row.push(rows[i].querySelector(".th-department").innerText);
-        row.push(rows[i].querySelector(".th-role").innerText);
-        row.push(rows[i].querySelector(".th-empno").innerText);
-        row.push(String(rows[i].querySelector(".th-joindt").innerText));
+        row.push(rows[i]['name']);
+        row.push(rows[i]['email']);
+        row.push(rows[i]['loc']);
+        row.push(rows[i]['dept']);
+        row.push(rows[i]['job_title']);
+        row.push(rows[i]['idNo']);
+        row.push(rows[i]['joinDt']);
         data.push(row.join(","));
     }
     downloadCSV(data.join("\n"))
@@ -36,9 +35,11 @@ function clearTable() {
 }
 function resetTable() {
     clearTable()
+    postFilterStorage = []
     let fullTable = getLocalStorageArray()
     for (let iter = 0; iter < fullTable.length; iter++) {
-        let theData = fetchData(fullTable, iter);
+        let theData = fetchData(fullTable[iter]);
+        postFilterStorage.push(theData);
         insertData(theData);
     }
     filteredCharacters = []
@@ -51,7 +52,6 @@ function resetTable() {
     for(let i = 0;i<filterTags.length;i++){
         filterTags[i].selectedIndex = 0;
     }
-    
 }
 function addEmployeeRedirect() {
     location.href = "addEmployees.html";
@@ -67,7 +67,6 @@ function highlightFilterIcon() {
         filterIcon.classList.remove('active')
     }
 }
-
 
 let allTheDataArray = getLocalStorageArray();
 let filteredCharacters = [];
@@ -86,6 +85,7 @@ function highlightAlphabet(alphabetButton) {
 }
 
 function applyFilters() {
+    postFilterStorage = []
     let statusFilter = document.getElementById('status');
     let statusText = statusFilter.options[statusFilter.selectedIndex].text;
     let locationFilter = document.getElementById('location');
@@ -97,15 +97,16 @@ function applyFilters() {
         locat: locationText,
         depart: departmentText,
     }
-    return applyingFilters(filtersObj);
+    applyingFilters(filtersObj);
 }
 
 function applyingFilters(filters) {
     clearTable()
     for (let ite = 0; ite < allTheDataArray.length; ite++) {
-        let totalData = fetchData(allTheDataArray, ite);
+        let totalData = fetchData(allTheDataArray[ite]);
         let filteredData = filteringData(totalData, filters);
         if (filteredData != null) {
+            postFilterStorage.push(filteredData);
             insertData(filteredData);
         }
     }
@@ -128,15 +129,15 @@ function filteringData(totData, filterObjPara) {
             filterObj['locat'] == totData['loc'] &&
             filterObj['depart'] == totData['dept'] &&
             filteredCharacters.indexOf(totData['name'][0]) !== -1) {
-            return totData;
-        }
-        else {
-            return null;
+                return totData;
+            }
+            else {
+                return null;
         }
     }
     else {
         if (filterObj['stat'] == totData['onlineStatus'] &&
-            filterObj['locat'] == totData['loc'] &&
+        filterObj['locat'] == totData['loc'] &&
             filterObj['depart'] == totData['dept']) {
             return totData;
         }
@@ -191,12 +192,12 @@ function deleteRecords() {
     localStorage.setItem("employeeData", jsonStr);
     resetTable();
     activateDelete();
-
+    
 }
 
 let glbSortCount = 0
 function sortingTable(sortParam){
-    let sortingStorage = getLocalStorageArray();
+    let sortingStorage = structuredClone(postFilterStorage);
     let allTableRows = document.querySelectorAll(' .'+sortParam);
     let valuesArray = [];
     clearTable();
@@ -212,46 +213,45 @@ function sortingTable(sortParam){
     }
     for(let i = 0;i<valuesArray.length;i++){
         for(let j = 0;j<sortingStorage.length;j++){
-            let data = fetchData(sortingStorage,j);
             if(sortParam == "table-person-name"){
-                if(data['name'] == valuesArray[i]){
-                    insertData(data);
+                if(sortingStorage[j]['name'] == valuesArray[i]){
+                    insertData(sortingStorage[j]);
                     sortingStorage.splice(sortingStorage.indexOf(sortingStorage[j]),1);
                 }
             }
             else if(sortParam == "th-location"){
-                if(data['loc'] == valuesArray[i]){
-                    insertData(data);
+                if(sortingStorage[j]['loc'] == valuesArray[i]){
+                    insertData(sortingStorage[j]);
                     sortingStorage.splice(sortingStorage.indexOf(sortingStorage[j]),1);
                 }
             }
             else if(sortParam == "th-department"){
-                if(data['dept'] == valuesArray[i]){
-                    insertData(data);
+                if(sortingStorage[j]['dept'] == valuesArray[i]){
+                    insertData(sortingStorage[j]);
                     sortingStorage.splice(sortingStorage.indexOf(sortingStorage[j]),1);
                 }
             }
             else if(sortParam == "th-role"){
-                if(data['job_title'] == valuesArray[i]){
-                    insertData(data);
+                if(sortingStorage[j]['job_title'] == valuesArray[i]){
+                    insertData(sortingStorage[j]);
                     sortingStorage.splice(sortingStorage.indexOf(sortingStorage[j]),1);
                 }
             }
             else if(sortParam == "th-empno"){
-                if(data['idNo'] == valuesArray[i]){
-                    insertData(data);
+                if(sortingStorage[j]['idNo'] == valuesArray[i]){
+                    insertData(sortingStorage[j]);
                     sortingStorage.splice(sortingStorage.indexOf(sortingStorage[j]),1);  
                 }
             }
             else if(sortParam == "btn-active"){
-                if(data['onlineStatus'] == valuesArray[i]){
-                    insertData(data);
+                if(sortingStorage[j]['onlineStatus'] == valuesArray[i]){
+                    insertData(sortingStorage[j]);
                     sortingStorage.splice(sortingStorage.indexOf(sortingStorage[j]),1);
                 }
             }
             else if(sortParam == "th-joindt"){
-                if(data['joinDt'] == valuesArray[i]){
-                    insertData(data);
+                if(sortingStorage[j]['joinDt'] == valuesArray[i]){
+                    insertData(sortingStorage[j]);
                     sortingStorage.splice(sortingStorage.indexOf(sortingStorage[j]),1);
                 }
             }
@@ -260,18 +260,18 @@ function sortingTable(sortParam){
     glbSortCount+=1
 }
 
-function fetchData(loadDataArray, item) {
-    let profile_Pic = loadDataArray[item]['profile picture'];
-    let firstName = loadDataArray[item]['First Name'];
-    let lastName = loadDataArray[item]['Last Name'];
-    let emailID = loadDataArray[item]['Email ID'];
-    let location = loadDataArray[item]['Location'];
-    let department = loadDataArray[item]['Department'];
-    let role = loadDataArray[item]['Job Title'];
-    let empno = loadDataArray[item]['Emp no'];
+function fetchData(loadDataArray) {
+    let profile_Pic = loadDataArray['profile picture'];
+    let firstName = loadDataArray['First Name'];
+    let lastName = loadDataArray['Last Name'];
+    let emailID = loadDataArray['Email ID'];
+    let location = loadDataArray['Location'];
+    let department = loadDataArray['Department'];
+    let role = loadDataArray['Job Title'];
+    let empno = loadDataArray['Emp no'];
     let status = 'Active'
-    let joinDate = loadDataArray[item]['Join Date'];
-
+    let joinDate = loadDataArray['Join Date'];
+    
     let dataObj = {
         picture: profile_Pic,
         name: firstName + " " + lastName,
@@ -284,19 +284,19 @@ function fetchData(loadDataArray, item) {
         joinDt: joinDate,
     }
     return dataObj
-
+    
 }
 
 function insertData(dataObject) {
     let tbody = document.querySelector('tbody');
     let tableRowTemplate =
-        `
-            <tr class="table-rows">
-                            <td><input type="checkbox" class="check-box" onclick="activateDelete()"/></td>
-                            <td class="th-user">
-                                <div class="profile-section-copy">
-                                    <div>
-                                        <img class="img-avatar" src="${dataObject['picture']}"/>
+    `
+    <tr class="table-rows">
+    <td><input type="checkbox" class="check-box" onclick="activateDelete()"/></td>
+    <td class="th-user">
+    <div class="profile-section-copy">
+    <div>
+    <img class="img-avatar" src="${dataObject['picture']}"/>
                                     </div>
                                     <div>
                                         <p class="table-person-name">${dataObject['name']}</p>
@@ -309,13 +309,13 @@ function insertData(dataObject) {
                             <td class="row-content th-role">${dataObject['job_title']}</td>
                             <td class="row-content th-empno">${dataObject['idNo']}</td>
                             <td class="th-status">
-                                <button class="btn-active">${dataObject['onlineStatus']}</button>
+                            <button class="btn-active">${dataObject['onlineStatus']}</button>
                             </td>
                             <td class="row-content th-joindt">${dataObject['joinDt']}</td>
                             <td class="triple-dot" onclick="toolTipVisible(this)">
                             <a>
-                                ...
-                                <div class="tooltip" >
+                            ...
+                            <div class="tooltip" >
                                     <p class="tooltip-text">View Details</p>
                                     <p class="tooltip-text">Edit</p>
                                     <p class="tooltip-text">Delete</p>
@@ -327,7 +327,7 @@ function insertData(dataObject) {
 }
 function toolTipVisible(toolTip) {
     toolTip.classList.toggle('active');
-
+    
 }
 
 function getLocalStorageArray() {
@@ -338,10 +338,12 @@ function getLocalStorageArray() {
     }
 }
 
+let postFilterStorage = [];
 document.addEventListener('DOMContentLoaded', () => {
     let loadDataArr = getLocalStorageArray();
     for (let it = 0; it < loadDataArr.length; it++) {
-        let loadedData = fetchData(loadDataArr, it);
+        let loadedData = fetchData(loadDataArr[it]);
+        postFilterStorage.push(loadedData);
         insertData(loadedData);
     }
 }
