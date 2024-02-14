@@ -14,7 +14,6 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
-
 <body>
     <header>
         <div class="header-searchbox">
@@ -105,6 +104,9 @@
         </div>
     </section>
     <section class="main">
+        <div id="toaster-notification">
+        </div>
+
         <form class="form-employee">
             <h1>Add Employee</h1>
             <div class="profile-picture-section">
@@ -112,7 +114,7 @@
                     id="profile-picture">
                 <div class="input-box">
                     <label for="input-file">Upload Profile Picture</label>
-                    <input type="file" accept="image/jpeg , image/jpg, image/png" id="input-file" name="profile picture" required>
+                    <input type="file" accept="image/jpeg , image/jpg, image/png" id="input-file" name="profile picture">
                 </div>
             </div>
             <h2>Personal Information</h2>
@@ -219,13 +221,14 @@
                 </div>
             </div>
             <div class="form-buttons">
-                <button class="btn-cancel">Cancel</button>
+                <button class="btn-cancel" onclick="cancelButton()">Cancel</button>
                 <button type="submit" class="btn-adding-employee">Add Employee</button>
             </div>
         </form>
     </section>
     <script src="js/sidebar.js"></script>
     <script src="js/addEmployees.js"></script>
+    <script src="https://kit.fontawesome.com/82c04ddc07.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

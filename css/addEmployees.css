@@ -1,3 +1,81 @@
+#toaster-notification{
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    
+}
+.toast-success{
+    width: 15.5rem;
+    height:4rem;
+    background-color: #E8F7E9;
+    border-left: 0.5rem solid #239D58;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    i{
+        color:#239D58;
+    }
+}
+.toast-failure{
+    width: 15.5rem;
+    height:4rem;
+    background-color: #FDEDEE;
+    border-left: 0.5rem solid #B82020;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    i{
+        color:#B82020;
+    }
+}
+.success-failure-message{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-top:0.5rem;
+    .green-x{
+        font-size:1.3rem;
+        color:#286049;
+    }
+    .red-x{
+        font-size:1.3rem;
+        color:#7E4141;
+
+    }
+}
+.tick-message{
+    display: flex;
+    align-items: start;
+    padding-left:0.3rem;
+    row-gap: 0.2rem;
+    p{
+        margin:0;
+        margin-left:0.4rem;
+        margin-bottom:0.4rem;
+
+    }
+    .message-head-success{
+        font-size:1rem;
+        color:#55695F;
+    }
+    .message-desc-success{
+        font-size:0.65rem;
+        color:#A3C0B0;
+    }
+    .message-head-failure{
+        font-size:1rem;
+        color:#776363;
+    }
+    .message-desc-failure{
+        font-size:0.65rem;
+        color:#BFA1A2;
+    }
+}
+
+
+
 form {
     margin-left: 1.2rem;
 }
