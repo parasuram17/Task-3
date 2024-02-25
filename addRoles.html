@@ -40,7 +40,8 @@
     <section class="sidebar">
         <div>
             <a title="logo"><img class="the-logo" src="images/TezoLogo.png" alt="Tezo Logo"></a>
-            <a id="collapsing-button" title="collapse-arrow"><img class="collapse-button" src="images/handle.png" alt="collapse"></a>
+            <a id="collapsing-button" title="collapse-arrow"><img class="collapse-button" src="images/handle.png"
+                    alt="collapse"></a>
             <h6 class="sidebar-heading">ALL</h6>
             <a>
                 <div class="sidebar-sub-heading">
@@ -76,8 +77,8 @@
                     </div>
                     <div class="sidebar-arrow">
                         <span class="material-symbols-outlined arrow">navigate_next</span>
+                        <div class="sideline"></div>
                     </div>
-                    <div class="sideline"></div>
                 </div>
             </a>
             <a>
@@ -90,8 +91,8 @@
                     </div>
                     <div class="sidebar-arrow">
                         <span class="material-symbols-outlined arrow">navigate_next</span>
+                        <div class="sideline"></div>
                     </div>
-                    <div class="sideline"></div>
                 </div>
             </a>
         </div>
@@ -103,46 +104,56 @@
         </div>
     </section>
     <section class="main">
-        <form>
-            <h1>Create New Role</h1>
+        <form class="add-role-form">
+            <h1 id="h1-tag">Create New Role</h1>
             <div class="input-rows">
                 <div class="label-input">
                     <label for="input-role-name-addRoles">Role Name</label>
-                    <input type="text" id="input-role-name-addRoles" name="Role Name" placeholder="Text" required>
+                    <input type="text" id="input-role-name-addRoles" class="inpt-box" name="Role Name" placeholder="Text" required>
+                    <div class="visible-prompt">
+                        <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
+                    </div>
                 </div>
                 <div class="label-input">
                     <label for="input-department-addRoles">Department</label>
                     <select name="Department" id="input-department-addRoles">
                         <option>UX/UI</option>
-                        <option>Product Engg</option>
-                        <option>opt 3</option>
+                        <option>Product Engg.</option>
+                        <option>IT</option>
                     </select>
                 </div>
             </div>
             <div>
                 <div class="label-input-description">
                     <label for="input-role-description">Description</label>
-                    <input type="text" id="input-role-description" class="description-input-box" name="Description" placeholder="Text" required>
+                    <input type="text" id="input-role-description" class="description-input-box" name="Description"
+                        placeholder="Text" required>
                 </div>
             </div>
             <div class="label-input">
-                <label for="input-location"> Location</label>
+                <label for="input-location">Location</label>
                 <select name="Location" id="input-location">
                     <option>Hyderabad</option>
-                    <option>opt 2</option>
-                    <option>opt 3</option>
+                    <option>Bangalore</option>
+                    <option>Delhi</option>
                 </select>
             </div>
             <div class="label-input label-input-assign-emp">
                 <label for="input-assign-employee"> Assign Employee</label>
-                <select></select>
+                <input type="text" id="input-assign-employee" placeholder="Search for an employee"></input>
             </div>
-            <div class="form-buttons">
-                <button class="btn-cancel">Cancel</button>
-                <button type="submit" class="btn-adding-role">Add Role</button>
+            <div class="all-employees">
+                <div class="emp-details">
+                </div>
             </div>
-    </form>  
+        </form>
+        <div class="form-buttons">
+            <button class="btn-cancel">Cancel</button>
+            <button type="submit" class="btn-adding-role">Add Role</button>
+        </div>
     </section>
     <script src="js/sidebar.js"></script>
+    <script src="js/addRoles.js"></script>
 </body>
+
 </html>

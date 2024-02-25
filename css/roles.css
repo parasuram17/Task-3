@@ -1,3 +1,15 @@
+.sidebar-sub-heading-roles{
+    background-color: rgb(254, 195, 195);
+    .sideline{
+        display: block;
+    }
+}
+
+.sidebar-sub-heading-roles p {
+color: rgb(244, 72, 72);
+    
+}
+
 .btn-add-role {
     width: 8.5rem
 }

@@ -2,6 +2,11 @@ form {
     margin-left: 1.2rem;
 }
 
+#input-assign-employee{
+    height:2rem;
+    width:16.6rem;
+}
+
 .label-input select{
     height:2rem;
     width:16.6rem;
@@ -26,4 +31,32 @@ form {
 
 .label-input-assign-emp{
     margin-top:1rem;
+    margin-bottom: 0.2rem;
+}
+
+.emp-details-row img{
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+    margin: 0.3rem 0.3rem 0.3rem 0.7rem;
+}
+.emp-details-row p{
+    margin:0;
+    font-size: 0.7rem;
+}
+.emp-details-row input{
+    margin-right:0.5rem;
+}
+.emp-details-row{
+    background-color: white;
+    border: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 16.85rem;
+    margin-bottom: 0.2rem;
+}
+.img-name-div{
+    display: flex;
+    align-items: center;
 }

@@ -69,7 +69,7 @@
             </a>
             <h6 class="sidebar-heading">ROLE/ USER MANAGEMENT</h6>
             <a href="roles.html">
-                <div class="sidebar-sub-heading">
+                <div class="sidebar-sub-heading sidebar-sub-heading-roles">
                     <div class="sidebar-icon-and-heading">
                         <div><img class="heading-icon" src="images/Horizontal nav/Roles.svg"></div>
                         <div>
@@ -78,8 +78,8 @@
                     </div>
                     <div class="sidebar-arrow">
                         <span class="material-symbols-outlined arrow">navigate_next</span>
+                        <div class="sideline"></div>
                     </div>
-                    <div class="sideline"></div>
                 </div>
             </a>
             <a>
@@ -92,8 +92,8 @@
                     </div>
                     <div class="sidebar-arrow">
                         <span class="material-symbols-outlined arrow">navigate_next</span>
+                        <div class="sideline"></div>
                     </div>
-                    <div class="sideline"></div>
                 </div>
             </a>
         </div>
@@ -125,327 +125,28 @@
                     <span> Filter</span>
                     <span class="material-symbols-outlined filtering-icon">filter_list</span>
                 </div>
-                <select class="filter-tags">
+                <select id ="location" class="filter-tags">
                     <option>Location</option>
-                    <option>opt 1</option>
-                    <option>opt 2</option>
-                    <option>opt 3</option>
+                    <option>Hyderabad</option>
+                    <option>Bangalore</option>
+                    <option>Delhi</option>
                 </select>
-                <select class="filter-tags">
+                <select id="department" class="filter-tags">
                     <option>Department</option>
-                    <option>opt 1</option>
-                    <option>opt 2</option>
-                    <option>opt 3</option>
+                    <option>UX/UI</option>
+                    <option>Product Engg.</option>
+                    <option>IT</option>
                 </select>
             </div>
 
             <div class="filter-box-apply">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-apply">Apply</button>
+                <button class="btn-reset" onclick="resetBtn()">Reset</button>
+                <button class="btn-apply" onclick="applyFilters()">Apply</button>
 
             </div>
         </div>
         <div class="cards">
-            <div class="c1">
-                <div class="card-heading">
-                    <div class="card-heading-text">Customer Service Manager</div>
-                    <div class="edit-icon"><img src="images/edit.svg"></div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        <div>
-                            <img class="card-icons" src="images/team_svgrepo.com.svg">
-                        </div>
-                        <div>
-                            Department
-                        </div>
-                    </div>
-                    <div class="card-sub-heading-right">
-                        IT
-                    </div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        <div>
-                            <img class="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
-                        </div>
-                        <div>
-                            Location
-                        </div>
-                    </div>
-                    <div class="card-sub-heading-right">
-                        Hyderabad
-                    </div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        Total Employees
-                    </div>
-                    <div class="card-sub-heading-right">
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div class="plus-43">+43</div>
-                    </div>
-                </div>
-                <a href="employees.html">
-                <div class="view-arrow">
-                        <p>View all Employees </p>
-                        <img class="icon-arrow" src="images/Vector.svg">
-                </div>
-                </a>
-            </div>
-            <div class="c2">
-                <div class="card-heading">
-                    <div class="card-heading-text">UX Designer</div>
-                    <div class="edit-icon"><img src="images/edit.svg"></div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        <div>
-                            <img class="card-icons" src="images/team_svgrepo.com.svg">
-                        </div>
-                        <div>
-                            Department
-                        </div>
-                    </div>
-                    <div class="card-sub-heading-right">
-                        Product Engg.
-                    </div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        <div>
-                            <img class="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
-                        </div>
-                        <div>
-                            Location
-                        </div>
-                    </div>
-                    <div class="card-sub-heading-right">
-                        Hyderabad
-                    </div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        Total Employees
-                    </div>
-                    <div class="card-sub-heading-right">
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div class="plus-43">+43</div>
-                    </div>
-                </div>
-                <a href="employees.html">
-                <div class="view-arrow">
-                        <p>View all Employees </p>
-                        <img class="icon-arrow" src="images/Vector.svg">
-                </div>
-                </a>
-            </div>
-            <div class="c3">
-                <div class="card-heading">
-                    <div class="card-heading-text">Asistant Backend Developer</div>
-                    <div class="edit-icon"><img src="images/edit.svg"></div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        <div>
-                            <img class="card-icons" src="images/team_svgrepo.com.svg">
-                        </div>
-                        <div>
-                            Department
-                        </div>
-                    </div>
-                    <div class="card-sub-heading-right">
-                        UXUI
-                    </div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        <div>
-                            <img class="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
-                        </div>
-                        <div>
-                            Location
-                        </div>
-                    </div>
-                    <div class="card-sub-heading-right">
-                        Hyderabad
-                    </div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        Total Employees
-                    </div>
-                    <div class="card-sub-heading-right">
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div class="plus-43">+43</div>
-                    </div>
-                </div>
-                <a href="employees.html">
-                <div class="view-arrow">
-                        <p>View all Employees </p>
-                        <img class="icon-arrow" src="images/Vector.svg">
-                </div>
-                </a>
-            </div>
-            <div class="c4">
-                <div class="card-heading">
-                    <div class="card-heading-text">Human Resource Manager</div>
-                    <div class="edit-icon"><img src="images/edit.svg"></div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        <div>
-                            <img class="card-icons" src="images/team_svgrepo.com.svg">
-                        </div>
-                        <div>
-                            Department
-                        </div>
-                    </div>
-                    <div class="card-sub-heading-right">
-                        IT
-                    </div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        <div>
-                            <img class="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
-                        </div>
-                        <div>
-                            Location
-                        </div>
-                    </div>
-                    <div class="card-sub-heading-right">
-                        Hyderabad
-                    </div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        Total Employees
-                    </div>
-                    <div class="card-sub-heading-right">
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div class="plus-43">+43</div>
-                    </div>
-                </div>
-                <a href="employees.html">
-                <div class="view-arrow">
-                        <p>View all Employees </p>
-                        <img class="icon-arrow" src="images/Vector.svg">
-                </div>
-                </a>
-            </div>
-            <div class="c5">
-                <div class="card-heading">
-                    <div class="card-heading-text">Front End Developer</div>
-                    <div class="edit-icon"><img src="images/edit.svg"></div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        <div>
-                            <img class="card-icons" src="images/team_svgrepo.com.svg">
-                        </div>
-                        <div>
-                            Department
-                        </div>
-                    </div>
-                    <div class="card-sub-heading-right">
-                        Product Engg.
-                    </div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        <div>
-                            <img class="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
-                        </div>
-                        <div>
-                            Location
-                        </div>
-                    </div>
-                    <div class="card-sub-heading-right">
-                        Hyderabad
-                    </div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        Total Employees
-                    </div>
-                    <div class="card-sub-heading-right">
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div class="plus-43">+43</div>
-                    </div>
-                </div>
-                <a href="employees.html">
-                <div class="view-arrow">
-                        <p>View all Employees </p>
-                        <img class="icon-arrow" src="images/Vector.svg">
-                </div>
-                </a>
-            </div>
-            <div class="c6">
-                <div class="card-heading">
-                    <div class="card-heading-text">Senior Developer</div>
-                    <div class="edit-icon"><img src="images/edit.svg"></div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        <div>
-                            <img class="card-icons" src="images/team_svgrepo.com.svg">
-                        </div>
-                        <div>
-                            Department
-                        </div>
-                    </div>
-                    <div class="card-sub-heading-right">
-                        UXUI
-                    </div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        <div>
-                            <img class="card-icons" src="images/location-pin-alt-1_svgrepo.com.svg">
-                        </div>
-                        <div>
-                            Location
-                        </div>
-                    </div>
-                    <div class="card-sub-heading-right">
-                        Hyderabad
-                    </div>
-                </div>
-                <div class="card-sub-heading">
-                    <div class="card-sub-heading-left">
-                        Total Employees
-                    </div>
-                    <div class="card-sub-heading-right">
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div><img class="imgs-top-5-emps" src="images/Avatar.png"></div>
-                        <div class="plus-43">+43</div>
-                    </div>
-                </div>
-                <a href="employees.html">
-                <div class="view-arrow">
-                        <p>View all Employees </p>
-                        <img class="icon-arrow" src="images/Vector.svg">
-                </div>
-                </a>
-            </div>
+ 
         </div>
     </section>
     <script src="js/sidebar.js"></script>

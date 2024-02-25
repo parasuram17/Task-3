@@ -12,8 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
     <header>
         <div class="header-searchbox">
@@ -77,8 +79,8 @@
                     </div>
                     <div class="sidebar-arrow">
                         <span class="material-symbols-outlined arrow">navigate_next</span>
+                        <div class="sideline"></div>
                     </div>
-                    <div class="sideline"></div>
                 </div>
             </a>
             <a>
@@ -91,8 +93,8 @@
                     </div>
                     <div class="sidebar-arrow">
                         <span class="material-symbols-outlined arrow">navigate_next</span>
+                        <div class="sideline"></div>
                     </div>
-                    <div class="sideline"></div>
                 </div>
             </a>
         </div>
@@ -104,130 +106,144 @@
         </div>
     </section>
     <section class="main">
-        <div id="toaster-notification">
-        </div>
-
-        <form class="form-employee">
-            <h1>Add Employee</h1>
-            <div class="profile-picture-section">
-                <img class="profile-pic" src="images/profilePicDefault.jpg" alt="default-profile-picture"
-                    id="profile-picture">
-                <div class="input-box">
-                    <label for="input-file">Upload Profile Picture</label>
-                    <input type="file" accept="image/jpeg , image/jpg, image/png" id="input-file" name="profile picture">
-                </div>
-            </div>
-            <h2>Personal Information</h2>
-            <div class="input-rows">
-                <div class="label-input" id="label-input-empno">
-                    <label for="input-emp-no"> Emp no</label>
-                    <input type="text" class="inpt-box" class="inpt-box" id="input-emp-no" placeholder="Text" name="Emp no" required>
-                    <div class="visible-prompt">
-                        <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
+        <div class="form-section">
+            <form class="form-employee">
+                <h1 id="h1-tag">Add Employee</h1>
+                <div class="profile-picture-section">
+                    <img class="profile-pic" src="images/profilePicDefault.jpg" alt="default-profile-picture" id="profile-picture">
+                    <div class="input-box">
+                        <label for="input-file">Upload Profile Picture</label>
+                        <input type="file" accept="image/jpeg , image/jpg, image/png" id="input-file"
+                            name="profile picture">
                     </div>
                 </div>
-            </div>
-            <div class="input-rows">
-                <div class="label-input">
-                    <label for="input-first-name"> First Name</label>
-                    <input type="text" class="inpt-box" id="input-first-name" placeholder="Text" name="First Name" required>
-                    <div class="visible-prompt">
-                        <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
-                    </div>
-                </div>
-                <div class="label-input">
-                    <label for="input-last-name"> Last Name</label>
-                    <input type="text" class="inpt-box" id="input-last-name" placeholder="Text" name="Last Name" required>
-                    <div class="visible-prompt">
-                        <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
-                    </div>
-                </div>
-                <div class="label-input">
-                    <label for="input-dob"> Date of Birth</label>
-                    <input type="text" class="inpt-box" id="input-dob" placeholder="Select" onfocus="(this.type='date')" name="DOB"
-                        required>
+                <h2>Personal Information</h2>
+                <div class="input-rows">
+                    <div class="label-input" id="label-input-empno">
+                        <label for="input-emp-no"> Emp no</label>
+                        <input type="text" class="inpt-box" id="input-emp-no" placeholder="Text" name="Emp no">
                         <div class="visible-prompt">
-                        <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
-                    </div>
-                </div>
-            </div>
-            <div class="input-rows">
-                <div class="label-input">
-                    <label for="input-email"> Email Id</label>
-                    <input type="text" class="inpt-box" id="input-email" placeholder="Joe.j@technovert.com" name="Email ID" required>
-                    <div class="visible-prompt">
-                        <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
-                    </div>
-                </div>
-                <div class="label-input">
-                    <label for="input-phno"> Mobile Number</label>
-                    <input type="text" class="inpt-box" id="input-phno" placeholder="0000000000" name="Phone no" required>
-                    <div class="visible-prompt">
-                        <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
-                    </div>
-                </div>
-            </div>
-            <h2>Employement Information</h2>
-            <div class="input-rows input-rows-emp-info">
-                <div class="label-input">
-                    <label for="input-join-date"> Joining Date</label>
-                    <input type="text" class="inpt-box" id="input-join-date" placeholder="12/08/2023" onfocus="(this.type='date')"
-                        name="Join Date" required>
-                        <div class="visible-prompt">
-                            <div class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this field is required</div>
+                            <p class="required-field"><span
+                                    class="material-symbols-outlined exclaim">emergency_home</span>this field is
+                                required</p>
                         </div>
+                    </div>
                 </div>
-                <div class="label-input">
-                    <label for="input-location"> Location</label>
-                    <select name="Location" id="input-location">
-                        <option>Hyderabad</option>
-                        <option>Bangalore</option>
-                        <option>Delhi</option>
-                    </select>
+                <div class="input-rows">
+                    <div class="label-input">
+                        <label for="input-first-name"> First Name</label>
+                        <input type="text" class="inpt-box" id="input-first-name" placeholder="Text" name="First Name">
+                        <div class="visible-prompt">
+                            <p class="required-field"><span
+                                    class="material-symbols-outlined exclaim">emergency_home</span>this field is
+                                required</p>
+                        </div>
+                    </div>
+                    <div class="label-input">
+                        <label for="input-last-name"> Last Name</label>
+                        <input type="text" class="inpt-box" id="input-last-name" placeholder="Text" name="Last Name">
+                        <div class="visible-prompt">
+                            <p class="required-field"><span
+                                    class="material-symbols-outlined exclaim">emergency_home</span>this field is
+                                required</p>
+                        </div>
+                    </div>
+                    <div class="label-input">
+                        <label for="input-dob"> Date of Birth</label>
+                        <input type="text" class="inpt-box" id="input-dob" placeholder="Select"
+                            onfocus="(this.type='date')" name="DOB" max="">
+                        <div class=" visible-prompt">
+                        <p class="required-field"><span
+                                class="material-symbols-outlined exclaim">emergency_home</span>this field is required
+                        </p>
+                    </div>
+                </div>
+        </div>
+        <div class="input-rows">
+            <div class="label-input label-input-email">
+                <label for="input-email"> Email Id</label>
+                <input type="email" class="inpt-box" id="input-email" placeholder="Joe.j@technovert.com"
+                    name="Email ID">
+                <div class="visible-prompt">
+                    <p class="required-field">
+                        <span class="material-symbols-outlined exclaim">emergency_home</span>
+                        <span id="text-prompt">this field is required</span>
+                    </p>
                 </div>
             </div>
-            <div class="input-rows input-rows-emp-info">
-                <div class="label-input">
-                    <label for="input-job-title"> Job Title</label>
-                    <select name="Job Title" id="input-job-title">
-                        <option>UX Designer</option>
-                        <option>Full Stack Developer</option>
-                    </select>
-                </div>
-                <div class="label-input">
-                    <label for="input-department"> Department</label>
-                    <select name="Department" id="input-department">
-                        <option>UX/UI</option>
-                        <option>Product Engg</option>
-                    </select>
+            <div class="label-input label-input-phno">
+                <label for="input-phno"> Mobile Number</label>
+                <input type="text" pattern="[1-9]{1}[0-9]{9}" class="inpt-box" id="input-phno" placeholder="0000000000"
+                    name="Phone no">
+                <div class="visible-prompt">
+                    <p class="required-field">
+                        <span class="material-symbols-outlined exclaim">emergency_home</span>
+                        <span id="text-prompt2">this field is required</span>
+                    </p>
                 </div>
             </div>
-            <div class="input-rows input-rows-emp-info">
-                <div class="label-input">
-                    <label for="input-assign-manager">Assign Manager</label>
-                    <select name="Assign Manager" id="input-assign-manager">
-                        <option>Select</option>
-                        <option>opt 2</option>
-                        <option>opt 3</option>
-                    </select>
-                </div>
-                <div class="label-input">
-                    <label for="input-assign-project"> Assign Project</label>
-                    <select name="Assign Project" id="input-assign-project">
-                        <option>Select</option>
-                        <option>opt 2</option>
-                        <option>opt 3</option>
-                    </select>
+        </div>
+        <h2>Employement Information</h2>
+        <div class="input-rows input-rows-emp-info">
+            <div class="label-input">
+                <label for="input-join-date"> Joining Date</label>
+                <input type="text" class="inpt-box" id="input-join-date" placeholder="12/08/2023"
+                    onfocus="(this.type='date')" name="Join Date" max="" min="">
+                <div class="visible-prompt">
+                    <p class="required-field"><span class="material-symbols-outlined exclaim">emergency_home</span>this
+                        field is required</p>
                 </div>
             </div>
-            <div class="form-buttons">
-                <button class="btn-cancel" onclick="cancelButton()">Cancel</button>
-                <button type="submit" class="btn-adding-employee">Add Employee</button>
+            <div class="label-input">
+                <label for="input-location"> Location</label>
+                <select name="Location" id="input-location">
+                    <option>Hyderabad</option>
+                    <option>Bangalore</option>
+                    <option>Delhi</option>
+                </select>
             </div>
-        </form>
+        </div>
+        <div class="input-rows input-rows-emp-info">
+            <div class="label-input">
+                <label for="input-job-title"> Job Title</label>
+                <select name="Job Title" id="input-job-title">
+                </select>
+            </div>
+            <div class="label-input">
+                <label for="input-department"> Department</label>
+                <select name="Department" id="input-department">
+                    <option>UX/UI</option>
+                    <option>Product Engg.</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-rows input-rows-emp-info">
+            <div class="label-input">
+                <label for="input-assign-manager">Assign Manager</label>
+                <select name="Assign Manager" id="input-assign-manager">
+                    <option>Select</option>
+                    <option>opt 2</option>
+                    <option>opt 3</option>
+                </select>
+            </div>
+            <div class="label-input">
+                <label for="input-assign-project"> Assign Project</label>
+                <select name="Assign Project" id="input-assign-project">
+                    <option>Select</option>
+                    <option>opt 2</option>
+                    <option>opt 3</option>
+                </select>
+            </div>
+        </div>
+    </form>
+    <div class="form-buttons">
+        <button class="btn-cancel" onclick="cancelButton()">Cancel</button>
+        <button type="submit" class="btn-adding-employee">Add Employee</button>
+    </div>
+        </div>
     </section>
     <script src="js/sidebar.js"></script>
-    <script src="js/addEmployees.js"></script>
+    <script src="js/addEmployees.js" type="module"></script>
     <script src="https://kit.fontawesome.com/82c04ddc07.js" crossorigin="anonymous"></script>
 </body>
 
